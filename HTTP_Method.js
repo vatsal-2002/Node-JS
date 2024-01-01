@@ -1,15 +1,13 @@
 const express = require('express');
 const app = express();
+app.use(express.json()); // Parse JSON requests
 
 // GET Request
 app.get('/', (req, res) => {
   res.send('Hello, this is a GET request!');
 });
 
-
 // POST Request
-app.use(express.json()); // Parse JSON requests
-
 app.post('/submit', (req, res) => {
     const data = req.body;
     res.json({ message: 'Data submitted successfully', data });

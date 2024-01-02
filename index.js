@@ -46,6 +46,7 @@ app.get("/api/users/:id", (req,res) => {
 });
 // Rest API
 app.get('/api/users', (req,res) => {
+    res.setHeader("X-MyName","vatsal prajapati") //custom header
    return res.json(users);
 })
 
